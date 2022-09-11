@@ -38,33 +38,37 @@
                     <h1>Sistema de Cadastro</h1>
                 </div>
                 <div class="section">
-                    <form action="#" method="POST" class="form border col-4 p-3 bg-secondary">
+                    <form action="#" method="POST" class="form border col-3 p-3 me-3 rounded shadow">
 
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label mt-3">Name</label>
                         <input type="text" name="name" id="name" class="form-control">
 
-                        <label for="lastName" class="form-label">Last Name</label>
+                        <label for="lastName" class="form-label mt-3">Last Name</label>
                         <input type="text" name="lastName" id="lastName" class="form-control"> 
 
-                        <label for="cpf" class="form-label">CPF</label>
+                        <label for="cpf" class="form-label mt-3">CPF</label>
                         <input type="text" name="cpf" id="cpf" class="form-control">
 
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label mt-3">Password</label>
                         <input type="password" name="password" id="password" class="form-control">
 
-                        <label for="email" class="form-label">E-mail</label>
+                        <label for="email" class="form-label mt-3">E-mail</label>
                         <input type="email" name="email" id="email" class="form-control">
+
+                        <div class="d-grid gap-2 col-6 mx-auto pt-3">
+                            <input type="submit" value ="Cadastrar" class="btn btn-outline-success">
+                        </div>
 
                     </form>
 
-                    <table class="table table-striped col-">
+                    <table class="table table-striped">
                         <thead>
-                            <tr>
-                                <th>NAME</th>
-                                <th>LAST NAME</th>
-                                <th>CPF</th>
-                                <th>EMAIL</th>
-                                <th>SENHA</th>
+                            <tr class="table-info">
+                                <th scope="col">NAME</th>
+                                <th scope="col">LAST NAME</th>
+                                <th scope="col">CPF</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">SENHA</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -72,7 +76,7 @@
                                 $dados = $p->buscarDados();
                                 if(count($dados)>0){
                                     for ($i=0; $i < count($dados); $i++) { 
-                                        echo '<tr>';
+                                        echo '<tr scope="row">';
                                         foreach($dados[$i] as $k => $v){
                                             if($k != 'id'){
                                                 echo '<td>' . $v . '</td>';
