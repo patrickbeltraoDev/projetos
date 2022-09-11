@@ -9,6 +9,7 @@
     $password = 'Paradoxo@555';
 
     $p = new Usuarios($sgbd, $dbname, $host, $user, $password);
+   
 
 
 
@@ -65,7 +66,8 @@
                     </thead>
                     <tbody class="table-group-divider">
                         <?php
-
+                            $dados = $p->buscarDados();
+                            var_dump($dados);
 
 
 
