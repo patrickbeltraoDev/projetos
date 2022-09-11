@@ -1,3 +1,23 @@
+<?php 
+
+    include_once('Usuarios.php');
+
+    $sgbd = 'mysql';
+    $dbname = 'clientes';
+    $host = 'localhost:3306';
+    $user = 'root';
+    $password = 'Paradoxo@555';
+
+    $p = new Usuarios($sgbd, $dbname, $host, $user, $password);
+
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -44,6 +64,12 @@
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
+                        <?php
+
+
+
+
+                        ?>
                         <tr>
                             <td>
 
