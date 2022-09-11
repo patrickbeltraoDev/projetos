@@ -32,58 +32,60 @@
     </head>
     <body>
 
-        <div class="container">
-            <div class="title">
-                <h1>Sistema de Cadastro</h1>
-            </div>
-            <div class="section">
-                <form action="#" method="POST" class="form col-4 border p-3 bg-secondary">
+        <div class="">
+            <div class="container-fluid">
+                <div class="title">
+                    <h1>Sistema de Cadastro</h1>
+                </div>
+                <div class="section">
+                    <form action="#" method="POST" class="form border col-4 p-3 bg-secondary">
 
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" name="name" id="name" class="form-control">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
 
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" class="form-control"> 
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" class="form-control"> 
 
-                    <label for="cpf" class="form-label">CPF</label>
-                    <input type="text" name="cpf" id="cpf" class="form-control">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" name="cpf" id="cpf" class="form-control">
 
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control">
 
-                    <label for="email" class="form-label">E-mail</label>
-                    <input type="email" name="email" id="email" class="form-control">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" name="email" id="email" class="form-control">
 
-                </form>
+                    </form>
 
-                <table class="table table-striped col-8">
-                    <thead>
-                        <tr>
-                            <th>NAME</th>
-                            <th>LAST NAME</th>
-                            <th>CPF</th>
-                            <th>EMAIL</th>
-                            <th>SENHA</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                        <?php
-                            $dados = $p->buscarDados();
-                            if(count($dados)>0){
-                                for ($i=0; $i < count($dados); $i++) { 
-                                    echo '<tr>';
-                                    foreach($dados[$i] as $k => $v){
-                                        if($k != 'id'){
-                                            echo '<td>' . $v . '</td>';
+                    <table class="table table-striped col-">
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>LAST NAME</th>
+                                <th>CPF</th>
+                                <th>EMAIL</th>
+                                <th>SENHA</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <?php
+                                $dados = $p->buscarDados();
+                                if(count($dados)>0){
+                                    for ($i=0; $i < count($dados); $i++) { 
+                                        echo '<tr>';
+                                        foreach($dados[$i] as $k => $v){
+                                            if($k != 'id'){
+                                                echo '<td>' . $v . '</td>';
+                                            }
                                         }
+                                        echo '</tr>';
                                     }
-                                    echo '</tr>';
                                 }
-                            }
-                        ?>
-                        </tr>
-                    </tbody>
-                </table>
+                            ?>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
