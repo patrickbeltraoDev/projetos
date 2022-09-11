@@ -59,26 +59,30 @@
                 <table class="table table-striped col-8">
                     <thead>
                         <tr>
-                            <th>
-
-                            </th>
+                            <th>NAME</th>
+                            <th>LAST NAME</th>
+                            <th>CPF</th>
+                            <th>EMAIL</th>
+                            <th>SENHA</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
                         <?php
                             $dados = $p->buscarDados();
-                            var_dump($dados);
-
-
-
+                            if(count($dados)>0){
+                                for ($i=0; $i < count($dados); $i++) { 
+                                    echo '<tr>';
+                                    foreach($dados[$i] as $k => $v){
+                                        if($k != 'id'){
+                                            echo '<td>' . $v . '</td>';
+                                        }
+                                    }
+                                    echo '</tr>';
+                                }
+                            }
                         ?>
-                        <tr>
-                            <td>
-
-                            </td>
                         </tr>
                     </tbody>
-
                 </table>
             </div>
         </div>
