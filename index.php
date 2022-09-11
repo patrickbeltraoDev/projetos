@@ -9,7 +9,28 @@
     $password = 'Paradoxo@555';
 
     $p = new Usuarios($sgbd, $dbname, $host, $user, $password);
+
+    if(isset($_POST['name'])){
+        $name = addslashes($_POST['name']);
+        $lastName = addslashes($_POST['lastName']);
+        $cpf = addslashes($_POST['cpf']);
+        $password = addslashes($_POST['password']);
+        $email = addslashes($_POST['email']);
+
+        if(!empty($name) && !empty($lastName) && !empty($cpf) && !empty($password) && !empty($email)){
+           if(!$p->cadastrarUsuarios($name, $lastName, $cpf, $email, $password)){
+            echo "CPF já Cadastrado!";
+           }
+        }else{
+            echo "Preencha todos os Campos!!!";
+        }
+    }
    
+    if(isset($_GET['id_btn'])){
+        $id_btn = addslashes($_GET['id_btn']);
+        $p->excluirUsuarios($id_btn);
+        header("location: index.php");
+    }
 
 
 
@@ -81,9 +102,15 @@
                                             if($k != 'id'){
                                                 echo '<td>' . $v . '</td>';
                                             }
+                                            
                                         }
+                                        ?>
+                                        <td><a href="index.php?id_btn=<?php echo $dados[$i]['id']?>">Excluir</a></td>
+                                        <?php
                                         echo '</tr>';
                                     }
+                                }else{
+                                    echo "Ainda não há Pessoas Cadastradas!!!";
                                 }
                             ?>
                             </tr>
